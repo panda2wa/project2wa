@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video src="rtsp://60.255.174.151:9090/dss/monitor/param?cameraid=1000206%242&substream=1"></video>
+    <iframe src="rtsp://60.255.174.151:9090/dss/monitor/param?cameraid=1000206%242&substream=1" frameborder="0"></iframe>
+    <object data="rtsp://60.255.174.151:9090/dss/monitor/param?cameraid=1000206%242&substream=1"  
+    type="application/x-shockwave-flash">
+        
+    </object>
+    <canvas id="video-canvas"></canvas>
+    <script src="jsmpeg.min.js"></script>
+    <script>
+      var canvas = document.getElementById('video-canvas');
+      var url = 'rtsp://60.255.174.151:9090/dss/monitor/param?cameraid=1000206%242&substream=1';
+      var player = new JSMpeg.Player(url, {canvas: canvas});
+    </script>
+</body>
+</html>

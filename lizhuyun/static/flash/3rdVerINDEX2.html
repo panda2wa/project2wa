@@ -1,0 +1,47 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>doFlash</title>
+</head>
+
+<body style="padding:0px;margin:0px;" scroll="no" >
+<script src="swf/jquery-1.4.2.min.js"></script> 
+<script src="swf/jquery.swfobject.1-1-1.min.js"></script>
+<script>
+    function doFlash(ashxUrl, projectid, refresh_interval, secretid, htmltext, propertyNum) {
+	  $('#myFlashVars').flash(
+		{
+			// test_flashvars.swf is the flash document
+		    swf: 'swf/index.swf',
+			width: '100%',
+			height: '100%',
+			allowScriptAccess: 'always',
+			// these arguments will be passed into the flash document
+			flashvars: {
+				actionType: 'zw_t_crane',
+				ashxUrl: ashxUrl,
+				projectid: projectid,
+				refresh_interval: refresh_interval,
+				secretid: secretid,
+				htmltext: 'htmltext',
+				ishistory: propertyNum
+			}
+		}
+	);
+}
+function setCrane(num) {
+   // alert(num); 20180411173043540t2u519y '20190109155614492r42gzd2', 
+    window.external.setCraneBasicData(num, "�鿴��ʽ���ػ�");
+	//��KD-T-1812-01219
+}
+
+</script>
+
+<div id="myFlashVars" style="width:100%;height:100%;" ></div>
+<script>
+	//$(doFlash('http://www.shanhetai.com/shtcrane/v2.0wcf/ShtFlashImpl.ashx', window.location.search.slice(1), 5, '112233', 'myFlashVars', '��AA-T-1807-23999'));
+	// $(doFlash('http://www.shanhetai.com/shtcrane/v2.0wcf/ShtFlashImpl.ashx', 'a369bada-9f18-4154-807c-432dce4cb2d6', 5, '112233', 'myFlashVars', '��KD-T-1812-01219'));
+</script>
+</body>
+</html>
